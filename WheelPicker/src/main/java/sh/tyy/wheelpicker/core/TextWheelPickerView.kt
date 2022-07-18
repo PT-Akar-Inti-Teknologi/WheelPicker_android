@@ -20,7 +20,7 @@ class TextWheelAdapter :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextWheelViewHolder {
         val view =
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.wheel_picker_item, parent, false) as TextView
+                .inflate(R.layout.text_wheel_picker, parent, false) as TextView
         return TextWheelViewHolder(view)
     }
 }

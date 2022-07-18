@@ -5,15 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingHorizontal="8dp"
-    android:paddingBottom="16dp"
-    tools:background="#66000000">
+    tools:background="#FFF"
+    android:background="@drawable/wheel_action_sheet_bg_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:src="@drawable/ic_bottom_sheet_marker"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date of Birth"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_marginTop="18dp"
+            android:textColor="#343A40"
+            android:fontFamily="@font/satoshi_bold"/>
+
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/container_view"
         android:layout_width="match_parent"
-        android:layout_height="222dp"
-        android:background="@drawable/wheel_action_sheet_bg"
+        android:layout_height="210dp"
         android:paddingHorizontal="24dp">
 
     </FrameLayout>
@@ -21,11 +43,14 @@
     <TextView
         android:id="@+id/ok_button"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/wheel_action_sheet_bg"
+        android:layout_height="46dp"
         android:gravity="center"
-        android:text="@android:string/ok"
-        android:textColor="#1B93FF"
-        android:textSize="18sp" />
+        android:background="@drawable/button_blue_radius"
+        android:text="Save"
+        android:textColor="#FFF"
+        android:fontFamily="@font/satoshi_bold"
+        android:textSize="16sp"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="20dp"/>
 </LinearLayout>
