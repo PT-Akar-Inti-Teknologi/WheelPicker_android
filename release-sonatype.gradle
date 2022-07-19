@@ -41,7 +41,7 @@ publishing {
                 name = PUBLISH_ARTIFACT_ID
                 description = 'iOS-style scroll wheel picker.'
                 // If your project has a dedicated site, use its URL here
-                url = 'https://github.com/ty0x2333/WheelPicker'
+                url = 'https://github.com/PT-Akar-Inti-Teknologi/WheelPicker_android'
                 licenses {
                     license {
                         name = 'The Apache License, Version 2.0'
@@ -50,16 +50,16 @@ publishing {
                 }
                 developers {
                     developer {
-                        id = 'ty0x2333'
-                        name = 'ty0x2333'
-                        email = 'ty0x2333@gmail.com'
+                        id = 'denandra-AIT'
+                        name = 'denandra'
+                        email = 'denandra.prasetya@akarinti.tech'
                     }
                 }
                 // Version control info, if you're using GitHub, follow the format as seen here
                 scm {
-                    connection = 'scm:git:github.com/ty0x2333/WheelPicker.git'
-                    developerConnection = 'scm:git:ssh://github.com/ty0x2333/WheelPicker.git'
-                    url = 'https://github.com/ty0x2333/WheelPicker/tree/master'
+                    connection = 'scm:git:github.com/PT-Akar-Inti-Teknologi/WheelPicker_android.git'
+                    developerConnection = 'scm:git:ssh://github.com/PT-Akar-Inti-Teknologi/WheelPicker_android.git'
+                    url = 'https://github.com/PT-Akar-Inti-Teknologi/WheelPicker_android/tree/master'
                 }
                 // A slightly hacky fix so that your POM will include any transitive dependencies
                 // that your library builds upon
