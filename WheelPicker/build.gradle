@@ -1,13 +1,14 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'maven-publish'
 }
 
 def libraryGroupId = 'com.github.PT-Akar-Inti-Teknologi'
 //def libraryGroupId = 'com.github.ty0x2333'
 def libraryArtifactId = 'wheelpicker'
 def libraryVersionCode = 10
-def libraryVersion = '0.5.0'
+def libraryVersion = '0.5.5'
 
 android {
     compileSdk 30
@@ -40,6 +41,27 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    publishing {
+        singleVariant("release") {
+            // if you don't want sources/javadoc, remove these lines
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId 'com.github.PT-Akar-Inti-Teknologi'
+                artifactId 'wheelpicker'
+                version = android.defaultConfig.versionName // or manually '1.0'
+            }
+        }
+    }
 }
 
 dependencies {
@@ -58,4 +80,4 @@ ext {
     PUBLISH_VERSION = libraryVersion
 }
 
-apply from: "${rootProject.projectDir}/release-sonatype.gradle"
+//apply from: "${rootProject.projectDir}/release-sonatype.gradle"
