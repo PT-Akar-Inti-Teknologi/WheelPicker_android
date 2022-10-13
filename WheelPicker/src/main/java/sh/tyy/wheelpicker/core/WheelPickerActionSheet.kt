@@ -34,9 +34,11 @@ abstract class WheelPickerActionSheet<Picker : View>(context: Context) {
         popupWindow.setBackgroundDrawable(BitmapDrawable())
     }
 
-    protected fun setPickerView(pickerView: Picker) {
+    protected fun setPickerView(pickerView: Picker, title: String) {
         this.pickerView = pickerView
-        val containerView = contentBinding.containerView
+        val containerView = contentBinding.title
+        containerView.text = title
+        val title = contentBinding.
         containerView.addView(pickerView)
         pickerView.layoutParams.apply {
             width = ViewGroup.LayoutParams.MATCH_PARENT

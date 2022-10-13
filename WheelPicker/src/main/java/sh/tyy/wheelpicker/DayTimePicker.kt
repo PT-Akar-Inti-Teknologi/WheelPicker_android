@@ -5,6 +5,6 @@ import sh.tyy.wheelpicker.core.WheelPickerActionSheet
 
 class DayTimePicker(context: Context) : WheelPickerActionSheet<DayTimePickerView>(context) {
     init {
-        setPickerView(DayTimePickerView(context))
+        setPickerView(DayTimePickerView(context), "")
     }
 }

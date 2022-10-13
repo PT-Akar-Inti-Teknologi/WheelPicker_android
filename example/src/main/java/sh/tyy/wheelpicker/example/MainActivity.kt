@@ -7,9 +7,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
+import sh.tyy.wheelpicker.compose.timepicker.timePickerComposeAction
 import sh.tyy.wheelpicker.core.BaseWheelPickerView
 import sh.tyy.wheelpicker.core.TextWheelAdapter
 import sh.tyy.wheelpicker.core.TextWheelPickerView
+import sh.tyy.wheelpicker.datePickerComposeAction
 
 class MainActivity : AppCompatActivity(), PickerExample {
     private lateinit var pickerView: TextWheelPickerView
@@ -52,14 +54,20 @@ class MainActivity : AppCompatActivity(), PickerExample {
 
         val weekdayTimePickerButton: Button = findViewById(R.id.weekday_time_picker_button)
         weekdayTimePickerButton.setOnClickListener {
-            val intent = Intent(this, WeekdayTimePickerExampleActivity::class.java)
-            startActivity(intent)
+//            val intent = Intent(this, WeekdayTimePickerExampleActivity::class.java)
+//            startActivity(intent)
+            datePickerComposeAction(this, window, title = "hehehhee") {
+
+            }
         }
 
         val customPickerButton: Button = findViewById(R.id.custom_picker_button)
         customPickerButton.setOnClickListener {
-            val intent = Intent(this, CustomWheelPickerExampleActivity::class.java)
-            startActivity(intent)
+//            val intent = Intent(this, CustomWheelPickerExampleActivity::class.java)
+//            startActivity(intent)
+            timePickerComposeAction(this, window, title = "woiii") {
+
+            }
         }
 
         val datePickerButton: Button = findViewById(R.id.date_picker_button)
