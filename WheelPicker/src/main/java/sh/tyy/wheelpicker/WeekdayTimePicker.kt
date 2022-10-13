@@ -5,6 +5,6 @@ import sh.tyy.wheelpicker.core.WheelPickerActionSheet
 
 class WeekdayTimePicker(context: Context) : WheelPickerActionSheet<WeekdayTimePickerView>(context) {
     init {
-        setPickerView(WeekdayTimePickerView(context))
+        setPickerView(WeekdayTimePickerView(context), "")
     }
 }

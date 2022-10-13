@@ -1,4 +1,4 @@
-package sh.tyy.wheelpicker
+package sh.tyy.wheelpicker.compose.datepicker
 
 import android.annotation.SuppressLint
 import android.content.Context
