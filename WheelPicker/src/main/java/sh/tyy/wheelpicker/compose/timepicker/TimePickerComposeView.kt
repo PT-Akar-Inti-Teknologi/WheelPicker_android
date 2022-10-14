@@ -43,13 +43,13 @@ class TimePickerComposeView @JvmOverloads constructor(
         set(value) {
             minutePickerView.selectedIndex = value - 1
         }
-        get() = minutePickerView.selectedIndex + 1
+        get() = minutePickerView.selectedIndex
 
     var hours: Int
         set(value) {
             hourPickerView.selectedIndex = value - 1
         }
-        get() = hourPickerView.selectedIndex + 1
+        get() = hourPickerView.selectedIndex
 
     var isCircular: Boolean = false
         set(value) {

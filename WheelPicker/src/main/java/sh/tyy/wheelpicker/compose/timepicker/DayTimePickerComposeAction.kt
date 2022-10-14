@@ -2,6 +2,7 @@ package sh.tyy.wheelpicker.compose.timepicker
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Window
 import sh.tyy.wheelpicker.R
@@ -29,7 +30,9 @@ fun timePickerComposeAction(
         dayTimePickerView.minutes = pickerView.minutes
         dayTimePickerView.hours = pickerView.hours
 
-        date("${String.format("%02d", pickerView.minutes)}-${String.format("%02d", pickerView.hours)}}")
+        Log.d("TAG ", "timePickerComposeAction: ${pickerView.minutes} ${pickerView.hours}")
+
+        date("${pickerView.minutes} : ${pickerView.hours}")
 
         picker.hide()
     }
