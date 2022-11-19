@@ -27,6 +27,7 @@ Quick Start
 --
 call this function to onClick function on compose
 #### Date Picker
+call this function to onClick function on compose
 ```kotlin
     datePickerComposeAction(
         value = date, // string value
@@ -54,7 +55,7 @@ call this function to onClick function on compose
 Inspiration and Reference
 ---
 WheelPicker is inspired by 
-[devilist/RecyclerWheelPicker](https://github.com/devilist/RecyclerWheelPicker).
+[devilist/RecyclerWheelPicker](https://github.com/devilist/RecyclerWheelPicker) &
 [ty0x2333/WheelPicker](https://github.com/ty0x2333/WheelPicker)
 
 License

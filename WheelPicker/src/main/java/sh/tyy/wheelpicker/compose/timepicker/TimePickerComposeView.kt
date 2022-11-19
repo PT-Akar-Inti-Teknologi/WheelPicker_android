@@ -23,11 +23,6 @@ class TimePickerComposeView @JvmOverloads constructor(
         fun didSelectData(minute: Int, hour: Int)
     }
 
-    @SuppressLint("SimpleDateFormat")
-    val sdf = SimpleDateFormat("yyyy")
-    private val currentDate = sdf.format(Date()).toInt()
-    private val yearRange = 1960 until currentDate+1
-
     private val minutePickerView: TextWheelPickerView
     private val hourPickerView: TextWheelPickerView
 
@@ -37,19 +32,17 @@ class TimePickerComposeView @JvmOverloads constructor(
         this.listener = listener
     }
 
-    private var yearsList: List<Int> = yearRange.toList()
-
     var minutes: Int
         set(value) {
-            minutePickerView.selectedIndex = value - 1
+            minutePickerView.selectedIndex = value
         }
-        get() = minutePickerView.selectedIndex + 1
+        get() = minutePickerView.selectedIndex
 
     var hours: Int
         set(value) {
-            hourPickerView.selectedIndex = value - 1
+            hourPickerView.selectedIndex = value
         }
-        get() = hourPickerView.selectedIndex + 1
+        get() = hourPickerView.selectedIndex
 
     var isCircular: Boolean = false
         set(value) {
