@@ -25,7 +25,7 @@ Preview
 
 Quick Start
 --
-
+call this function to onClick function on compose
 #### Date Picker
 ```kotlin
     datePickerComposeAction(
