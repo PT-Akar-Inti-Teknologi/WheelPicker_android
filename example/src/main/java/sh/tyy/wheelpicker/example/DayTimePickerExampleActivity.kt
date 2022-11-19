@@ -1,6 +1,7 @@
 package sh.tyy.wheelpicker.example
 
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.CheckBox
@@ -64,6 +65,7 @@ class DayTimePickerExampleActivity : AppCompatActivity(), PickerExample {
                 dayTimePickerView.day = pickerView.day
                 dayTimePickerView.hour = pickerView.hour
                 dayTimePickerView.minute = pickerView.minute
+                Log.d("TAG ", "onCreate: ${dayTimePickerView.day} ${pickerView.day}")
                 picker.hide()
             }
             picker.setOnDismissListener {

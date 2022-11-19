@@ -3,6 +3,7 @@ package sh.tyy.wheelpicker.compose.datepicker
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import sh.tyy.wheelpicker.core.BaseWheelPickerView
@@ -31,7 +32,7 @@ class DatePickerComposeView @JvmOverloads constructor(
 
     private val dayPickerView: TextWheelPickerView
     private val monthPickerView: TextWheelPickerView
-    private val minutePickerView: TextWheelPickerView
+    private val yearPickerView: TextWheelPickerView
 
     private var listener: Listener? = null
 
@@ -55,21 +56,21 @@ class DatePickerComposeView @JvmOverloads constructor(
 
     var year: Int
         set(value) {
-            monthPickerView.selectedIndex = yearsList.indexOf(value)
+            yearPickerView.selectedIndex = yearsList.indexOf(value)
         }
-        get() = yearsList.getOrNull(minutePickerView.selectedIndex) ?: 1960
+        get() = yearsList.getOrNull(yearPickerView.selectedIndex) ?: 1960
 
     var isCircular: Boolean = false
         set(value) {
             field = value
             dayPickerView.isCircular = value
             monthPickerView.isCircular = value
-            minutePickerView.isCircular = value
+            yearPickerView.isCircular = value
         }
 
     private val dayAdapter = TextWheelAdapter()
     private val monthAdapter = TextWheelAdapter()
-    private val minuteAdapter = TextWheelAdapter()
+    private val yearAdapter = TextWheelAdapter()
 
     private val binding: TriplePickerComposeViewBinding =
         TriplePickerComposeViewBinding.inflate(LayoutInflater.from(context), this)
@@ -78,7 +79,7 @@ class DatePickerComposeView @JvmOverloads constructor(
         super.setHapticFeedbackEnabled(hapticFeedbackEnabled)
         dayPickerView.isHapticFeedbackEnabled = hapticFeedbackEnabled
         monthPickerView.isHapticFeedbackEnabled = hapticFeedbackEnabled
-        minutePickerView.isHapticFeedbackEnabled = hapticFeedbackEnabled
+        yearPickerView.isHapticFeedbackEnabled = hapticFeedbackEnabled
     }
 
     init {
@@ -94,16 +95,16 @@ class DatePickerComposeView @JvmOverloads constructor(
         monthPickerView.setAdapter(monthAdapter)
         monthAdapter.values = (month).map { TextWheelPickerView.Item(it, it) }
 
-        minutePickerView = binding.rightPicker
-        minutePickerView.setAdapter(minuteAdapter)
-        minuteAdapter.values =
+        yearPickerView = binding.rightPicker
+        yearPickerView.setAdapter(yearAdapter)
+        yearAdapter.values =
             (yearRange).map {
                 TextWheelPickerView.Item("$it", "$it")
             }
 
         dayPickerView.setWheelListener(this)
         monthPickerView.setWheelListener(this)
-        minutePickerView.setWheelListener(this)
+        yearPickerView.setWheelListener(this)
     }
 
     // region BaseWheelPickerView.WheelPickerViewListener

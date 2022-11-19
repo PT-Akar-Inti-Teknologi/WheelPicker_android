@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
+import sh.tyy.wheelpicker.DayTimePicker
+import sh.tyy.wheelpicker.compose.datepicker.DatePickerCompose
 import sh.tyy.wheelpicker.compose.timepicker.timePickerComposeAction
 import sh.tyy.wheelpicker.core.BaseWheelPickerView
 import sh.tyy.wheelpicker.core.TextWheelAdapter
@@ -21,6 +23,9 @@ class MainActivity : AppCompatActivity(), PickerExample {
 
 
     private val simpleAdapter = TextWheelAdapter()
+
+    var date = ""
+    var times = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,18 +61,27 @@ class MainActivity : AppCompatActivity(), PickerExample {
         weekdayTimePickerButton.setOnClickListener {
 //            val intent = Intent(this, WeekdayTimePickerExampleActivity::class.java)
 //            startActivity(intent)
-            datePickerComposeAction(this, window, title = "hehehhee") {
-
-            }
+            datePickerComposeAction(
+                value = date,
+                context = this,
+                window = window,
+                title = "Date Picker",
+                date = {
+                    date = it
+                }
+            )
         }
 
         val customPickerButton: Button = findViewById(R.id.custom_picker_button)
         customPickerButton.setOnClickListener {
-//            val intent = Intent(this, CustomWheelPickerExampleActivity::class.java)
-//            startActivity(intent)
-            timePickerComposeAction(this, window, title = "woiii") {
-
-            }
+            timePickerComposeAction(
+                value = times,
+                context = this,
+                window = window, title = "Time Picker",
+                date = {
+                    times = it
+                }
+            )
         }
 
         val datePickerButton: Button = findViewById(R.id.date_picker_button)
