@@ -36,6 +36,8 @@ fun timePickerComposeAction(
         dayTimePickerView.minutes = pickerView.minutes
         dayTimePickerView.hours = pickerView.hours
 
+        Log.d("TAG ", "timePickerComposeAction: ${pickerView.minutes} ${pickerView.hours}")
+
         date("${String.format("%02d",pickerView.minutes)}:${String.format("%02d",pickerView.hours)}")
 
         picker.hide()
