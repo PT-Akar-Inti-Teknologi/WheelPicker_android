@@ -7,13 +7,12 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
-import sh.tyy.wheelpicker.DayTimePicker
-import sh.tyy.wheelpicker.compose.datepicker.DatePickerCompose
+import androidx.compose.ui.graphics.Color
 import sh.tyy.wheelpicker.compose.timepicker.timePickerComposeAction
 import sh.tyy.wheelpicker.core.BaseWheelPickerView
 import sh.tyy.wheelpicker.core.TextWheelAdapter
 import sh.tyy.wheelpicker.core.TextWheelPickerView
-import sh.tyy.wheelpicker.datePickerComposeAction
+import sh.tyy.wheelpicker.compose.datepicker.datePickerComposeAction
 
 class MainActivity : AppCompatActivity(), PickerExample {
     private lateinit var pickerView: TextWheelPickerView
@@ -66,6 +65,8 @@ class MainActivity : AppCompatActivity(), PickerExample {
                 context = this,
                 window = window,
                 title = "Date Picker",
+                color = Color(0xFFE91639),
+                titleCenter = true,
                 date = {
                     date = it
                 }
@@ -77,7 +78,8 @@ class MainActivity : AppCompatActivity(), PickerExample {
             timePickerComposeAction(
                 value = times,
                 context = this,
-                window = window, title = "Time Picker",
+                window = window,
+                title = "Time Picker",
                 date = {
                     times = it
                 }

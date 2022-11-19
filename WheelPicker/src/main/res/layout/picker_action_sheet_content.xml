@@ -27,9 +27,10 @@
             android:text="Date of Birth"
             android:gravity="center"
             android:textSize="18sp"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="28dp"
             android:textColor="#343A40"
-            android:fontFamily="@font/satoshi_bold"/>
+            android:fontFamily="@font/satoshi_bold"
+            android:layout_marginHorizontal="24dp"/>
 
     </LinearLayout>
 
@@ -41,17 +42,32 @@
 
     </FrameLayout>
 
-    <TextView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/ok_button"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:gravity="center"
-        android:background="@drawable/button_blue_radius"
+        android:layout_height="54dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="16sp"
         android:text="Save"
         android:textColor="#FFF"
         android:fontFamily="@font/satoshi_bold"
-        android:textSize="16sp"
-        android:layout_marginTop="12dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="20dp"/>
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:backgroundTint="#1D4ED8"
+        app:cornerRadius="6dp"/>
+
+<!--    <TextView-->
+<!--        android:id="@+id/ok_button"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="46dp"-->
+<!--        android:gravity="center"-->
+<!--        android:background="@drawable/button_blue_radius"-->
+<!--        android:text="Save"-->
+<!--        android:textColor="#FFF"-->
+<!--        android:fontFamily="@font/satoshi_bold"-->
+<!--        android:textSize="16sp"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:layout_marginHorizontal="16dp"-->
+<!--        android:layout_marginBottom="20dp"/>-->
 </LinearLayout>
