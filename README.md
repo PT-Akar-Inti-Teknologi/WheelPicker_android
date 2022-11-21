@@ -30,10 +30,12 @@ call this function to onClick function on compose
 call this function to onClick function on compose
 ```kotlin
     datePickerComposeAction(
-        value = date, // string value
-        context = this, // context
-        window = window, //window
-        title = "Date Picker", // must string
+        value = date, // mandatory string value
+        context = this, // mandatory context
+        window = window, // mandatory window
+        title = "Date Picker", // mandatory must string,
+        buttonColor = PrimaryBase, // optional compose color
+        titleCenter = true || false, // optional for title position center true or false
         date = { 
             date = it // set value
         }
@@ -45,7 +47,9 @@ call this function to onClick function on compose
         value = times, // string value
         context = this, // context
         window = window, //window
-        title = "Time Picker", // must string
+        title = "Time Picker", // must string,
+        buttonColor = PrimaryBase, // optional compose color
+        titleCenter = true || false, // optional for title position center true or false
         date = { 
             times = it // set value
         }
