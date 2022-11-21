@@ -42,10 +42,10 @@
 
     </FrameLayout>
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/ok_button"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
+        android:layout_height="42dp"
         android:layout_marginHorizontal="24dp"
         android:layout_marginBottom="16dp"
         android:textSize="16sp"
@@ -54,7 +54,7 @@
         android:fontFamily="@font/satoshi_bold"
         android:textAllCaps="false"
         android:gravity="center"
-        android:backgroundTint="#1D4ED8"
+        android:background="@drawable/button_blue_radius"
         app:cornerRadius="6dp"/>
 
 <!--    <TextView-->
