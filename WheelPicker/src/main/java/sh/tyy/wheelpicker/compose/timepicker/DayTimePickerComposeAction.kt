@@ -14,7 +14,7 @@ fun timePickerComposeAction(
     context: Context,
     window: Window,
     title: String,
-    buttonColor: Color = Color(0xFFE91639),
+    buttonColor: Color = Color(0xFF1D4ED8),
     titleCenter: Boolean = false,
     date: (date: String) -> Unit
 ) {
