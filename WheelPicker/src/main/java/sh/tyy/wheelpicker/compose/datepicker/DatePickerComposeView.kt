@@ -28,7 +28,7 @@ class DatePickerComposeView @JvmOverloads constructor(
     @SuppressLint("SimpleDateFormat")
     val sdf = SimpleDateFormat("yyyy")
     private val currentDate = sdf.format(Date()).toInt()
-    private val yearRange = 1960 until currentDate+1
+    private val yearRange = 1960 until currentDate+3
 
     private val dayPickerView: TextWheelPickerView
     private val monthPickerView: TextWheelPickerView

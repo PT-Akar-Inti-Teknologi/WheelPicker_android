@@ -1,10 +1,14 @@
 package sh.tyy.wheelpicker.core
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Rect
 import android.graphics.drawable.BitmapDrawable
 import android.view.*
 import android.widget.PopupWindow
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
+import androidx.core.content.ContextCompat
 import sh.tyy.wheelpicker.R
 import sh.tyy.wheelpicker.databinding.PickerActionSheetContentBinding
 
@@ -34,12 +38,26 @@ abstract class WheelPickerActionSheet<Picker : View>(context: Context) {
         popupWindow.setBackgroundDrawable(BitmapDrawable())
     }
 
-    protected fun setPickerView(pickerView: Picker, title: String) {
+    protected fun setPickerView(
+        pickerView: Picker,
+        title: String,
+        color: Color = Color(0xFF1D4ED8),
+        titleCenter: Boolean = false
+    ) {
         this.pickerView = pickerView
-        val containerView = contentBinding.title
-        containerView.text = title
-        val title = contentBinding.
-        containerView.addView(pickerView)
+        val contentTitle = contentBinding.title
+        val buttonColor = contentBinding.okButton
+
+        contentTitle.text = title
+        if (titleCenter) {
+            contentTitle.gravity = Gravity.CENTER
+        } else {
+            contentTitle.gravity = Gravity.LEFT
+        }
+
+        buttonColor.backgroundTintList = ColorStateList.valueOf(color.toArgb())
+
+        contentBinding.containerView.addView(pickerView)
         pickerView.layoutParams.apply {
             width = ViewGroup.LayoutParams.MATCH_PARENT
             height = ViewGroup.LayoutParams.MATCH_PARENT
