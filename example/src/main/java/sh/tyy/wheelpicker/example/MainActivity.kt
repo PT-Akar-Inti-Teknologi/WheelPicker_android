@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity(), PickerExample {
                 context = this,
                 window = window,
                 title = "Date Picker",
-                color = Color(0xFFE91639),
+                buttonColor = Color(0xFFE91639),
                 titleCenter = true,
                 date = {
                     date = it
