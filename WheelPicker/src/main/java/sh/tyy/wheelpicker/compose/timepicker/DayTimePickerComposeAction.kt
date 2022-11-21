@@ -14,7 +14,7 @@ fun timePickerComposeAction(
     context: Context,
     window: Window,
     title: String,
-    color: Color = Color(0xFFE91639),
+    buttonColor: Color = Color(0xFFE91639),
     titleCenter: Boolean = false,
     date: (date: String) -> Unit
 ) {
@@ -22,7 +22,7 @@ fun timePickerComposeAction(
 
     val valueArray = value.split(":").toTypedArray()
 
-    val picker = TimePickerCompose(context = context, title = title, color = color, titleCenter = titleCenter)
+    val picker = TimePickerCompose(context = context, title = title, color = buttonColor, titleCenter = titleCenter)
     val view = LayoutInflater.from(context).inflate(R.layout.time_picker, null, false)
     dayTimePickerView = view.findViewById(R.id.custom_time_picker_views)
     picker.show(window = window)

@@ -16,7 +16,7 @@ fun datePickerComposeAction(
     window: Window,
     title: String,
     titleCenter: Boolean = false,
-    color: Color = Color(0xFF1D4ED8),
+    buttonColor: Color = Color(0xFF1D4ED8),
     date: (date: String) -> Unit
 ) {
     lateinit var dayTimePickerView: DatePickerComposeView
@@ -26,7 +26,7 @@ fun datePickerComposeAction(
     val picker = DatePickerCompose(
         context = context,
         title = title,
-        color = color,
+        color = buttonColor,
         titleCenter = titleCenter
     )
 
